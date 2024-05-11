@@ -7,7 +7,7 @@
 #I advice to veriufu that no one has any permissions on bash _history. so this cripts get clean output 
 
 array=()
-array+=("apt-get) ##prompts or values we want to monitor or aviid // aadd as many prompts as you need to monitor to the array
+array+=("apt-get") ##prompts or values we want to monitor or aviid // aadd as many prompts as you need to monitor to the array
 array+=("prompt2")
 array+=("prompt3")
 
