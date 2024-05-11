@@ -48,12 +48,12 @@ done
 done < "/root/.bash_history"
 
 trigger_log="/root/system_logs/logs/monitor_1"  ##so you can log the info // CHANGE
-[[ "${verify[@]} == "" ]] || echo "${verify[@]}    ALERT SENT ON $(date)" >> "$triggers_log"
-[[ "${verify[@]} == "" ]] || echo "${verify[@]}"
-[[ "${verify[@]} == "" ]] && echo "empty"
+[[ "${verify[@]}" == "" ]] || echo "${verify[@]}    ALERT SENT ON $(date)" >> "$triggers_log"
+[[ "${verify[@]}" == "" ]] || echo "${verify[@]}"
+[[ "${verify[@]}" == "" ]] && echo "empty"
 
 ##I would advice to triggger a mial sending indtead of the echo, mailutils prompt could d the thing
-[[ "${verify[@]} == "yes" ]] || echo "Should notify trough mail service"
+[[ "${verify[@]}" == "yes" ]] || echo "Should notify trough mail service"
 
 echo "triggered:$triggered"
 echo "qty=$countC"
