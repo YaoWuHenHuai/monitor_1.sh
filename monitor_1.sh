@@ -15,7 +15,7 @@ verify=()
 count=0
 triggered="no"
 countC=0
-
+array2=()
 ##mirroring file.
 [ -f "mirroring" ] || touch "mirroring"
 
@@ -40,6 +40,7 @@ do
                 verify+=("WARNING: $line was used on $(date) by user $(whoami)")
                 countC=$((countC+1))
                 triggered="yes"
+                array2+="$line"
             fi
         done
     fi
@@ -53,7 +54,11 @@ trigger_log="/root/system_logs/logs/monitor_1"  ##so you can log the info // CHA
 [[ "${verify[@]}" == "" ]] && echo "empty"
 
 ##I would advice to triggger a mial sending indtead of the echo, mailutils prompt could d the thing
-[[ "${verify[@]}" == "yes" ]] || echo "Should notify trough mail service"
+#[[ "${verify[@]}" == "yes" ]] || echo "Should notify trough mail service"
+echo "the following prompts were used within the server:
+    "${array2[@]}"
+| mail -a FROM:"server@serverdomain" "yourmail@serverdomain" --subject="Security Notification"
+
 
 echo "triggered:$triggered"
 echo "qty=$countC"
