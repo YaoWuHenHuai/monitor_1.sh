@@ -55,10 +55,14 @@ trigger_log="/root/system_logs/logs/monitor_1"  ##so you can log the info // CHA
 
 ##I would advice to triggger a mial sending indtead of the echo, mailutils prompt could d the thing
 #[[ "${verify[@]}" == "yes" ]] || echo "Should notify trough mail service"
-echo "the following prompts were used within the server:
-    "${array2[@]}"
-| mail -a FROM:"server@serverdomain" "yourmail@serverdomain" --subject="Security Notification"
-
+if [[ "${array2[@]}" == "" ]];
+ then
+        :
+else
+    echo "the following prompts were used within the server:
+        "${array2[@]}"
+    | mail -a FROM:"server@serverdomain" "yourmail@serverdomain" --subject="Security Notification"
+fi
 
 echo "triggered:$triggered"
 echo "qty=$countC"
