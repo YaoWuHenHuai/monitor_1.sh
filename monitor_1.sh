@@ -37,7 +37,7 @@ do
         do
             if [[ "$line" =~ "$prompt" ]];
              then
-                verify+=("WARNING: $line was used on $(date) by user $(whoami)")
+                verify+=("WARNING: $line was used on $(date)")
                 countC=$((countC+1))
                 triggered="yes"
                 array2+="$line"
