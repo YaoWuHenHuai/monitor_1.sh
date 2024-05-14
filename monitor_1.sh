@@ -40,7 +40,7 @@ do
                 verify+=("WARNING: $line was used on $(date)")
                 countC=$((countC+1))
                 triggered="yes"
-                array2+="$line"
+                array2+=("$line")
             fi
         done
     fi
