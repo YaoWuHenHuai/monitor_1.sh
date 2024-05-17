@@ -1,3 +1,4 @@
+GNU bash, version 5.2.15(1)-release (x86_64-pc-linux-gnu)- Debian 12.5
 Each 15 seconds will verify if any prompt from our list was used, case it was will get current user and moment when that happen and will notify us , this case I used mailutils for that task
 
 Set up:
